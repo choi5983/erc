@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="http://10.0.1.40:3000/socket.io/socket.io.js"></script>
+
+    <script>
+	  var socket = io.connect('http://10.0.1.40');
+
+	  var name = prompt('What is your name?');
+	  socket.emit('new_name', {name: name} );
+	</script>
+
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+  </body>
+</html>
